@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DITE Study Helper</title>
+<style>
+body{font-family:sans-serif; background:#f0f2f5; padding:20px; text-align:center}
+.card{background:white; padding:15px; margin:10px; border-radius:12px; box-shadow:0 2px 8px #ccc}
+button{padding:10px 20px; background:#6C63FF; color:white; border:none; border-radius:8px}
+input{padding:10px; width:80%; margin:5px; border-radius:8px; border:1px solid #ccc}
+</style>
+</head>
+<body>
+<h2>📚 DITE Study Helper</h2>
+<div class="card">
+<h3>✅ My To-Do</h3>
+<input id="todoInput" placeholder="Add task"><br>
+<button onclick="addTodo()">Add</button>
+<ul id="todoList"></ul>
+</div>
+<div class="card">
+<h3>🤖 Ask Doubt (AI)</h3>
+<input id="q" placeholder="Ask: What is Git push?">
+<button onclick="askAI()">Ask</button>
+<p id="ans"></p>
+</div>
+<div class="card">
+<h3>🕐 Timetable Today</h3>
+<p>9-10: AI Class</p>
+<p>10-11: Web Dev Lab</p>
+</div>
+<script>
+function addTodo(){
+ let v=document.getElementById('todoInput').value;
+ if(v){ let li=document.createElement('li'); li.textContent=v; document.getElementById('todoList').appendChild(li); document.getElementById('todoInput').value=""; }
+}
+function askAI(){
+ document.getElementById('ans').innerText="Answer for '"+document.getElementById('q').value+"': This is demo, will connect Gemini API.";
+}
+</script>
+</body>
+</html>
